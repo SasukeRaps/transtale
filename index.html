@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traductor Gemini Conversacional (PWA) V6</title>
+    <title>Traductor Gemini Conversacional (PWA) V4</title>
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,12 +14,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Gemini Translator">
     
-    <!-- Simulamos un manifest.json mínimo - AHORA CON ICONO INCRUSTADO (BASE64) -->
-    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Traductor%20Conversacional%22%2C%22short_name%22%3A%22Traductor%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23111827%22%2C%22theme_color%22%3A%22%2314b8a6%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApYIAAAABGdBTUEAALGPC%2FxhBQAAAAFzUkdCAK7OHOkAAAA%2FUExURQAAABsmJxsoJxwAJRwmJAApMCgAKyEAKRwlJgAmJgAoKAAjJgApJwArKCEAKBwkJiIAKBskJgAoKCR%2BuE4AAAATdFJOUwD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FAMr3%2BQ0AAARfSURBVHja7dwJUlRRFADB59AO0tJ2z73%2FS1yQgBWIB28%2F1O3tO2s2gA0A8H%2BhQIEChQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoU%2FgB0G0zQ%2FbA0sP2wNLD9sDSwnbU0sB1rA9tZG9jO2sB21gS2szawnbUB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szaw%2Fxv4G%2Fof%2Bhv6H%2Fof%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2FM8Z%2BCngb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BAAAAAElFTkSuQmCC%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
+    <!-- Simulamos un manifest.json mínimo -->
+    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,{%22name%22:%22Traductor%20Conversacional%22,%22short_name%22:%22Traductor%22,%22start_url%22:%22.%2F%22,%22display%22:%22standalone%22,%22background_color%22:%22%23111827%22,%22theme_color%22:%22%2314b8a6%22,%22icons%22:[{%22src%22:%22icon.png%22,%22sizes%22:%22192x192%22,%22type%22:%22image%2Fpng%22}]}">
 
     <style>
         body { font-family: 'Inter', sans-serif; }
-        /* Usar dvh (Dynamic Viewport Height) para mejor responsividad móvil */
         .min-h-screen { min-height: 100dvh; }
         /* Estilo para ocultar flechas de select y usar el SVG de fondo */
         select {
@@ -30,37 +29,41 @@
             background-repeat: no-repeat;
             background-position: right 0.5rem center;
             background-size: 1.5em 1.5em;
+            /* Asegura que el selector no desborde con texto largo */
+            max-width: 100%;
         }
     </style>
 </head>
-<!-- Padding más ajustado en móviles (p-3) y más grande en sm+ (p-4) -->
-<body class="bg-gray-900 text-white p-3 sm:p-4 flex flex-col min-h-screen">
+<body class="bg-gray-900 text-white p-4 flex flex-col min-h-screen">
 
-    <!-- Título más pequeño en móviles (text-2xl) -->
-    <header class="text-center mb-4">
-        <h1 class="text-2xl sm:text-3xl font-bold text-teal-400">Conversor IA en Tiempo Real</h1>
-        <p class="text-sm text-gray-400 mt-1">Soporte actualizado para Español LATAM</p>
+    <header class="text-center mb-6">
+        <h1 class="text-3xl font-bold text-teal-400">Conversor IA en Tiempo Real</h1>
+        <p class="text-sm text-gray-400 mt-1">Traductor Conversacional Rápido</p>
     </header>
 
-    <!-- Selectores de Idiomas (margen reducido a mb-4) -->
-    <div id="language-selectors" class="flex items-center justify-between bg-gray-800 p-3 rounded-xl shadow-lg mb-4">
-        <div class="flex flex-col flex-grow">
-            <label for="source-lang" class="text-xs font-medium text-gray-400">Tu idioma (Hablas)</label>
-            <select id="source-lang" class="bg-transparent text-lg font-semibold border-none focus:ring-0 focus:outline-none pr-8 cursor-pointer"></select>
+    <!-- Selectores de Idiomas (CORREGIDO PARA RESPONSIVIDAD) -->
+    <div id="language-selectors" class="flex items-center justify-between bg-gray-800 p-3 rounded-xl shadow-lg mb-6">
+        
+        <!-- Contenedor del idioma de origen -->
+        <div class="flex flex-col flex-1 min-w-0 mr-2">
+            <label for="source-lang" class="text-xs font-medium text-gray-400 truncate">Tu idioma</label>
+            <select id="source-lang" class="bg-transparent text-lg font-semibold border-none focus:ring-0 focus:outline-none pr-8 cursor-pointer w-full"></select>
         </div>
         
-        <button id="swap-btn" class="p-2 bg-teal-600 hover:bg-teal-700 rounded-full transition duration-150 ease-in-out shadow-md disabled:opacity-50 mx-2" aria-label="Intercambiar idiomas">
+        <!-- Botón de Intercambio -->
+        <button id="swap-btn" class="p-2 bg-teal-600 hover:bg-teal-700 rounded-full transition duration-150 ease-in-out shadow-md disabled:opacity-50 mx-2 flex-shrink-0" aria-label="Intercambiar idiomas">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M19 14v6"/><path d="M21 16h-4"/><path d="M17 22l4-4-4-4"/><path d="M5 10v6"/><path d="M3 12h4"/><path d="M7 8l-4 4 4 4"/><path d="M5 2h6"/><path d="M13 2h6"/></svg>
         </button>
 
-        <div class="flex flex-col flex-grow text-right">
-            <label for="target-lang" class="text-xs font-medium text-gray-400">Idioma del interlocutor (Traduces a)</label>
-            <select id="target-lang" class="bg-transparent text-lg font-semibold border-none focus:ring-0 focus:outline-none pl-8 cursor-pointer"></select>
+        <!-- Contenedor del idioma de destino -->
+        <div class="flex flex-col flex-1 min-w-0 ml-2 text-right">
+            <label for="target-lang" class="text-xs font-medium text-gray-400 truncate">Idioma interlocutor</label>
+            <select id="target-lang" class="bg-transparent text-lg font-semibold border-none focus:ring-0 focus:outline-none pl-8 cursor-pointer w-full"></select>
         </div>
     </div>
 
-    <!-- Caja de Entrada (Tu Voz/Texto) (margen reducido a mb-4) -->
-    <div class="bg-gray-800 p-4 rounded-xl shadow-lg mb-4 flex-grow flex flex-col">
+    <!-- Caja de Entrada (Tu Voz/Texto) -->
+    <div class="bg-gray-800 p-4 rounded-xl shadow-lg mb-6 flex-grow flex flex-col">
         <div class="flex items-center justify-between mb-2">
             <span id="source-name" class="text-sm text-gray-400 font-medium"></span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="m3 7 4 4 4-4"/><path d="M3 17h18"/></svg>
@@ -80,8 +83,8 @@
         </button>
     </div>
 
-    <!-- Caja de Salida (Traducción y Audio) (margen reducido a mb-4) -->
-    <div class="bg-gray-700 p-4 rounded-xl shadow-lg mb-4 flex-grow flex flex-col">
+    <!-- Caja de Salida (Traducción y Audio) -->
+    <div class="bg-gray-700 p-4 rounded-xl shadow-lg mb-6 flex-grow flex flex-col">
         <div class="flex items-center justify-between mb-2">
             <span id="target-name" class="text-sm text-gray-400 font-medium"></span>
             <button id="play-btn" class="text-teal-400 hover:text-teal-300 disabled:opacity-50 p-1 rounded-full transition duration-150" disabled aria-label="Reproducir audio de la traducción">
@@ -93,8 +96,8 @@
         </div>
     </div>
 
-    <!-- Botón de Micrófono Principal (Acción Central) (margen reducido a mb-4) -->
-    <div class="flex justify-center mb-4">
+    <!-- Botón de Micrófono Principal (Acción Central) -->
+    <div class="flex justify-center mb-6">
         <button id="mic-btn" class="p-6 rounded-full shadow-2xl transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 bg-teal-600 hover:bg-teal-700 ring-4 ring-teal-400/50" aria-label="Activar/Desactivar Micrófono">
             <svg id="mic-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
         </button>
@@ -108,18 +111,7 @@
         <p>Consejo: La traducción se activa automáticamente al hablar.</p>
     </div>
 
-    <!-- ===== NUEVO: Banner de Ayuda de Instalación ===== -->
-    <div id="install-helper" class="mt-4 p-3 bg-gray-800 rounded-lg text-center shadow-inner border border-gray-700">
-        <p class="text-sm text-gray-300">¿Quieres instalar esta app en tu móvil?</p>
-        <p class="text-xs text-gray-400 mt-1">
-            Toca el botón de menú de Chrome (⋮) y selecciona <strong class="text-teal-400">"Instalar aplicación"</strong>.
-        </p>
-    </div>
-    <!-- ===== FIN NUEVO ===== -->
-
-
     <script>
-        // La clave API se inyecta automáticamente en este entorno
         const apiKey = "AIzaSyAEysElNfZYkMYt5lm1XHWu0L1MydSgUd8"; 
 
         // --- CONSTANTES Y ESTADO ---
@@ -135,10 +127,10 @@
         // Mapeo de códigos de idioma a la mejor voz TTS de Gemini disponible.
         const getVoiceName = (langCode) => {
             if (langCode.startsWith('ja')) return 'Aoede'; 
-            if (langCode.startsWith('ko')) return 'Leda'; 
-            if (langCode.startsWith('ru')) return 'Charon'; 
-            if (langCode.startsWith('es')) return 'Kore'; 
-            return 'Puck'; 
+            if (langCode.startsWith('ko')) return 'Leda'; // Voz juvenil para Coreano
+            if (langCode.startsWith('ru')) return 'Charon'; // Voz informativa para Ruso
+            if (langCode.startsWith('es')) return 'Kore'; // Voz firme para Español
+            return 'Puck'; // Voz amigable/predeterminada (Inglés, Chino, etc.)
         };
 
         const getLangName = (code) => LANGUAGES.find(l => l.code === code)?.name || code;
@@ -239,7 +231,9 @@
                 micBtn.classList.remove('bg-red-600', 'hover:bg-red-700', 'ring-red-400/50');
                 micBtn.classList.add('bg-gray-600', 'hover:bg-gray-700', 'ring-gray-400/50');
             } else {
-                translateBtnText.innerHTML = `Traducir Texto`;
+                translateBtnText.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M17 12H3"/><path d="m10 5-7 7 7 7"/></svg>
+                    Traducir Texto`;
                 micBtn.classList.remove('bg-gray-600', 'hover:bg-gray-700', 'ring-gray-400/50');
                 micBtn.classList.add('bg-teal-600', 'hover:bg-teal-700', 'ring-teal-400/50');
             }
@@ -279,52 +273,31 @@
             updateStatus('Generando audio...');
 
             try {
-                // Implementar lógica de reintento (exponential backoff) para la API de TTS
-                const maxRetries = 3;
-                let attempt = 0;
-                let response = null;
-
-                while (attempt < maxRetries) {
-                    const ttsPayload = {
-                        contents: [{
-                            parts: [{ text: text }]
-                        }],
-                        generationConfig: {
-                            responseModalities: ["AUDIO"],
-                            speechConfig: {
-                                voiceConfig: {
-                                    prebuiltVoiceConfig: { voiceName: voiceName }
-                                }
+                const ttsPayload = {
+                    contents: [{
+                        parts: [{ text: text }]
+                    }],
+                    generationConfig: {
+                        responseModalities: ["AUDIO"],
+                        speechConfig: {
+                            voiceConfig: {
+                                prebuiltVoiceConfig: { voiceName: voiceName }
                             }
-                        },
-                        model: "gemini-2.5-flash-preview-tts"
-                    };
-
-                    const ttsApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-                    
-                    response = await fetch(ttsApiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(ttsPayload)
-                    });
-
-                    if (response.ok) {
-                        break; // Salir del bucle si es exitoso
-                    }
-
-                    if (response.status === 429 || response.status >= 500) {
-                        attempt++;
-                        if (attempt < maxRetries) {
-                            const delay = Math.pow(2, attempt) * 1000;
-                            await new Promise(resolve => setTimeout(resolve, delay));
                         }
-                    } else {
-                        throw new Error(`TTS HTTP error! status: ${response.status}`);
-                    }
-                }
+                    },
+                    model: "gemini-2.5-flash-preview-tts"
+                };
 
-                if (!response || !response.ok) {
-                    throw new Error(`TTS API failed after ${maxRetries} attempts.`);
+                const ttsApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(ttsApiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(ttsPayload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`TTS HTTP error! status: ${response.status}`);
                 }
 
                 const result = await response.json();
@@ -393,35 +366,14 @@
 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
-                // Implementar lógica de reintento (exponential backoff) para la API de Traducción
-                const maxRetries = 3;
-                let attempt = 0;
-                let response = null;
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
 
-                while (attempt < maxRetries) {
-                    response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (response.ok) {
-                        break; // Salir del bucle si es exitoso
-                    }
-
-                    if (response.status === 429 || response.status >= 500) {
-                        attempt++;
-                        if (attempt < maxRetries) {
-                            const delay = Math.pow(2, attempt) * 1000;
-                            await new Promise(resolve => setTimeout(resolve, delay));
-                        }
-                    } else {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                }
-
-                if (!response || !response.ok) {
-                    throw new Error(`Translation API failed after ${maxRetries} attempts.`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
                 const result = await response.json();
@@ -485,7 +437,7 @@
             if (isListening) {
                 recognition.stop();
             } else {
-                if (isTranslating) return; 
+                if (isTranslating) return; // No iniciar si está traduciendo
                 
                 recognition.lang = sourceLangSelect.value;
                 inputTextarea.value = '';
@@ -495,6 +447,7 @@
                 try {
                     recognition.start();
                 } catch (e) {
+                    // Previene error si recognition.start() se llama antes de que la anterior termine
                     console.warn("Recognition already started or busy:", e);
                     setListeningState(false);
                 }
@@ -530,7 +483,7 @@
                 targetLangSelect.appendChild(optionTarget);
             });
             
-            // Valores iniciales (Español LATAM a Japonés por defecto)
+            // Valores iniciales (Español a Japonés por defecto)
             sourceLangSelect.value = 'es-MX'; 
             targetLangSelect.value = 'ja-JP';
 
@@ -540,18 +493,18 @@
             // Listeners
             sourceLangSelect.addEventListener('change', updateLanguageNames);
             targetLangSelect.addEventListener('change', updateLanguageNames);
-			swapBtn.addEventListener('click', swapLanguages);
-			micBtn.addEventListener('click', toggleListening);
-			translateBtn.addEventListener('click', () => handleTextTranslation(inputTextarea.value));
-			playBtn.addEventListener('click', () => handleTTS(translatedDiv.textContent, getVoiceName(targetLangSelect.value)));
+            swapBtn.addEventListener('click', swapLanguages);
+            micBtn.addEventListener('click', toggleListening);
+            translateBtn.addEventListener('click', () => handleTextTranslation(inputTextarea.value));
+            playBtn.addEventListener('click', () => handleTTS(translatedDiv.textContent, getVoiceName(targetLangSelect.value)));
             
             inputTextarea.addEventListener('input', () => {
                 translateBtn.disabled = isListening || isTranslating || !inputTextarea.value.trim();
             });
             
             // Inicializar el estado del botón de traducción
-			translateBtn.disabled = !inputTextarea.value.trim();
-		};
+            translateBtn.disabled = !inputTextarea.value.trim();
+        };
 
         // Iniciar la aplicación cuando la ventana esté completamente cargada
         window.onload = setupUI;
@@ -559,4 +512,3 @@
     </script>
 </body>
 </html>
-
