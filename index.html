@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traductor Gemini Conversacional (PWA) V4</title>
+    <title>Traductor Gemini Conversacional (PWA) V5</title>
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Gemini Translator">
     
-    <!-- Simulamos un manifest.json mínimo -->
-    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,{%22name%22:%22Traductor%20Conversacional%22,%22short_name%22:%22Traductor%22,%22start_url%22:%22.%2F%22,%22display%22:%22standalone%22,%22background_color%22:%22%23111827%22,%22theme_color%22:%22%2314b8a6%22,%22icons%22:[{%22src%22:%22icon.png%22,%22sizes%22:%22192x192%22,%22type%22:%22image%2Fpng%22}]}">
+    <!-- Simulamos un manifest.json mínimo y simple -->
+    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,{%22name%22:%22Traductor%20IA%20Conversacional%22,%22short_name%22:%22IA%20Trans%22,%22start_url%22:%22.%2F%22,%22display%22:%22standalone%22,%22background_color%22:%22%23111827%22,%22theme_color%22:%22%2314b8a6%22}">
 
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -111,8 +111,17 @@
         <p>Consejo: La traducción se activa automáticamente al hablar.</p>
     </div>
 
+    <!-- Mensaje de Ayuda para la Instalación PWA (NUEVO) -->
+    <div id="pwa-help" class="text-center text-sm p-3 bg-teal-800/20 rounded-lg mt-4 shadow-inner">
+        <p class="text-teal-400 font-semibold mb-1">¿Problemas para instalar en Xiaomi?</p>
+        <p class="text-xs text-teal-300">Intenta añadir un acceso directo: Toca los **tres puntos (⋮)** del navegador, busca **"Instalar aplicación"** o **"Añadir a pantalla de inicio"** y confirma dos veces.</p>
+    </div>
+
     <script>
+        // *** IMPORTANTE ***
+        // PEGA AQUÍ TU CLAVE DE API DE GOOGLE AI PARA QUE LA APP FUNCIONE AL DESCARGARLA.
         const apiKey = "AIzaSyAEysElNfZYkMYt5lm1XHWu0L1MydSgUd8"; 
+        // ******************
 
         // --- CONSTANTES Y ESTADO ---
         const LANGUAGES = [
