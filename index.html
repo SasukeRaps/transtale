@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traductor Gemini Conversacional (PWA) V5</title>
+    <title>Traductor Gemini Conversacional (PWA) V6</title>
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,11 +14,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Gemini Translator">
     
-    <!-- Simulamos un manifest.json mínimo -->
-    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,{%22name%22:%22Traductor%20Conversacional%22,%22short_name%22:%22Traductor%22,%22start_url%22:%22.%2F%22,%22display%22:%22standalone%22,%22background_color%22:%22%23111827%22,%22theme_color%22:%22%2314b8a6%22,%22icons%22:[{%22src%22:%22icon.png%22,%22sizes%22:%22192x192%22,%22type%22:%22image%2Fpng%22}]}">
+    <!-- Simulamos un manifest.json mínimo - AHORA CON ICONO INCRUSTADO (BASE64) -->
+    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Traductor%20Conversacional%22%2C%22short_name%22%3A%22Traductor%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23111827%22%2C%22theme_color%22%3A%22%2314b8a6%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApYIAAAABGdBTUEAALGPC%2FxhBQAAAAFzUkdCAK7OHOkAAAA%2FUExURQAAABsmJxsoJxwAJRwmJAApMCgAKyEAKRwlJgAmJgAoKAAjJgApJwArKCEAKBwkJiIAKBskJgAoKCR%2BuE4AAAATdFJOUwD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FAMr3%2BQ0AAARfSURBVHja7dwJUlRRFADB59AO0tJ2z73%2FS1yQgBWIB28%2F1O3tO2s2gA0A8H%2BhQIEChQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoUKFCgQIECBQoU%2FgB0G0zQ%2FbA0sP2wNLD9sDSwnbU0sB1rA9tZG9jO2sB21gS2szawnbUB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21gawszawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szawnbWB7KwNbGdtYDtrA9hZG9jO2sB21ga0szaw%2Fxv4G%2Fof%2Bhv6H%2Fof%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2Fgf%2BB%2F4H%2FM8Z%2BCngb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BBv4G%2Fgb%2BAAAAAElFTkSuQmCC%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
 
     <style>
         body { font-family: 'Inter', sans-serif; }
+        /* Usar dvh (Dynamic Viewport Height) para mejor responsividad móvil */
         .min-h-screen { min-height: 100dvh; }
         /* Estilo para ocultar flechas de select y usar el SVG de fondo */
         select {
@@ -32,15 +33,17 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white p-4 flex flex-col min-h-screen">
+<!-- Padding más ajustado en móviles (p-3) y más grande en sm+ (p-4) -->
+<body class="bg-gray-900 text-white p-3 sm:p-4 flex flex-col min-h-screen">
 
-    <header class="text-center mb-6">
-        <h1 class="text-3xl font-bold text-teal-400">Conversor IA en Tiempo Real</h1>
+    <!-- Título más pequeño en móviles (text-2xl) -->
+    <header class="text-center mb-4">
+        <h1 class="text-2xl sm:text-3xl font-bold text-teal-400">Conversor IA en Tiempo Real</h1>
         <p class="text-sm text-gray-400 mt-1">Soporte actualizado para Español LATAM</p>
     </header>
 
-    <!-- Selectores de Idiomas -->
-    <div id="language-selectors" class="flex items-center justify-between bg-gray-800 p-3 rounded-xl shadow-lg mb-6">
+    <!-- Selectores de Idiomas (margen reducido a mb-4) -->
+    <div id="language-selectors" class="flex items-center justify-between bg-gray-800 p-3 rounded-xl shadow-lg mb-4">
         <div class="flex flex-col flex-grow">
             <label for="source-lang" class="text-xs font-medium text-gray-400">Tu idioma (Hablas)</label>
             <select id="source-lang" class="bg-transparent text-lg font-semibold border-none focus:ring-0 focus:outline-none pr-8 cursor-pointer"></select>
@@ -56,8 +59,8 @@
         </div>
     </div>
 
-    <!-- Caja de Entrada (Tu Voz/Texto) -->
-    <div class="bg-gray-800 p-4 rounded-xl shadow-lg mb-6 flex-grow flex flex-col">
+    <!-- Caja de Entrada (Tu Voz/Texto) (margen reducido a mb-4) -->
+    <div class="bg-gray-800 p-4 rounded-xl shadow-lg mb-4 flex-grow flex flex-col">
         <div class="flex items-center justify-between mb-2">
             <span id="source-name" class="text-sm text-gray-400 font-medium"></span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="m3 7 4 4 4-4"/><path d="M3 17h18"/></svg>
@@ -77,8 +80,8 @@
         </button>
     </div>
 
-    <!-- Caja de Salida (Traducción y Audio) -->
-    <div class="bg-gray-700 p-4 rounded-xl shadow-lg mb-6 flex-grow flex flex-col">
+    <!-- Caja de Salida (Traducción y Audio) (margen reducido a mb-4) -->
+    <div class="bg-gray-700 p-4 rounded-xl shadow-lg mb-4 flex-grow flex flex-col">
         <div class="flex items-center justify-between mb-2">
             <span id="target-name" class="text-sm text-gray-400 font-medium"></span>
             <button id="play-btn" class="text-teal-400 hover:text-teal-300 disabled:opacity-50 p-1 rounded-full transition duration-150" disabled aria-label="Reproducir audio de la traducción">
@@ -90,8 +93,8 @@
         </div>
     </div>
 
-    <!-- Botón de Micrófono Principal (Acción Central) -->
-    <div class="flex justify-center mb-6">
+    <!-- Botón de Micrófono Principal (Acción Central) (margen reducido a mb-4) -->
+    <div class="flex justify-center mb-4">
         <button id="mic-btn" class="p-6 rounded-full shadow-2xl transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 bg-teal-600 hover:bg-teal-700 ring-4 ring-teal-400/50" aria-label="Activar/Desactivar Micrófono">
             <svg id="mic-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
         </button>
@@ -105,8 +108,18 @@
         <p>Consejo: La traducción se activa automáticamente al hablar.</p>
     </div>
 
+    <!-- ===== NUEVO: Banner de Ayuda de Instalación ===== -->
+    <div id="install-helper" class="mt-4 p-3 bg-gray-800 rounded-lg text-center shadow-inner border border-gray-700">
+        <p class="text-sm text-gray-300">¿Quieres instalar esta app en tu móvil?</p>
+        <p class="text-xs text-gray-400 mt-1">
+            Toca el botón de menú de Chrome (⋮) y selecciona <strong class="text-teal-400">"Instalar aplicación"</strong>.
+        </p>
+    </div>
+    <!-- ===== FIN NUEVO ===== -->
+
+
     <script>
-        // La clave API se inyecta automáticamente en este entorno   cuenta tecnosasukeandroid
+        // La clave API se inyecta automáticamente en este entorno
         const apiKey = "AIzaSyAEysElNfZYkMYt5lm1XHWu0L1MydSgUd8"; 
 
         // --- CONSTANTES Y ESTADO ---
